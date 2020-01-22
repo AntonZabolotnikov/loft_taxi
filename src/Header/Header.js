@@ -1,13 +1,20 @@
 import React from 'react';
 import './header.css';
 
-export const Header = ({ Page }) => {
+export const Header = ({ page }) => {
+    const PAGE = {
+        profile: () => page("profile"),
+        map: () => page("map"),
+        login: () => page("login"),
+        signup: () => page("signup")
+    };
+
     return (
         <section className="header">
-            <button onClick = {() => Page("profile")} >Profile</button>
-            <button onClick = {() => Page("map")} >Map</button>
-            <button onClick = {() => Page("login")} >Login</button>
-            <button onClick = {() => Page("signup")} >Signup</button>
+            <button onClick = {PAGE.profile} >Profile</button>
+            <button onClick = {PAGE.map} >Map</button>
+            <button onClick = {PAGE.login} >Login</button>
+            <button onClick = {PAGE.signup} >Signup</button>
         </section>
     );
 }

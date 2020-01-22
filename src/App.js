@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Header Page={setPage} />
+      <Header page={setPage} />
       {PAGES[page](setPage)}
     </>
   );
