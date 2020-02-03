@@ -1,23 +1,29 @@
 import React from 'react';
-import './login.css';
-import Submit from '../Components/Submit'
-import Input from '../Components/Input'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
-export const Login = ({ setPage }) => {
-    function handleClick(e) {
-        e.preventDefault();
-        setPage("map");
-        console.log("Submit form");
-    }
+const useStyles = makeStyles(theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: 300,
+      },
+    },
+  }));
+
+const Login = ({ submitLogin }) => {
+    const classes = useStyles();
 
     return (
         <section className="login-section">
-            <h1 className="login-descript__title">Login</h1>
-            <form className="login-form" onSubmit={handleClick}>
-                <Input descript="Name*" type="text" setClass="login-form__name"/>
-                <Input descript="Pass*" type="password" setClass="login-form__pass"/>
-                <Submit forms="Sign in" />
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={ submitLogin }>
+                <TextField name="login" id="standard-basic" label="email"/>
+                <TextField name="password" id="standard-basic_2" label="password"/>
+                <Button type="submit">Sign in</Button>
             </form>
         </section>
     )
 }
+
+export default Login;
