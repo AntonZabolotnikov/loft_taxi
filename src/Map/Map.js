@@ -26,7 +26,7 @@ const Map = ({ name }) => {
 
     const style = {
         position: 'absolute',
-        top: 180,
+        top: 220,
         bottom: 0,
         left: 15,
         right: 15,

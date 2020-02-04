@@ -1,4 +1,6 @@
 import React, { useState, createContext } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 import Profile from "./Profile/Profile";
 import Map from "./Map/Map";
 import Login from "./Login/Login";
@@ -13,7 +15,7 @@ const App = () => {
   const [isLogged, setLogged] = useState(false);
   const authStatus = {
     login: (email, password) => {
-      if (email !== '' && password !== '') {
+      if (email === '1' && password === '1') {
         setLogged(true);
         setPage('map');
       }
@@ -41,12 +43,11 @@ const App = () => {
   return (
     
     <Provider value={authStatus}>
-      <div className="App">
-        <div className="container">
-          {isLogged && <Header page={page} setLogged={setLogged} setPage={setPage} />}
-          {PAGES[page](setPage)}
-        </div>
-      </div>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        {isLogged && <Header page={page} setLogged={setLogged} setPage={setPage} />}
+        {PAGES[page](setPage)}
+      </Container>
     </Provider>
     
   );
