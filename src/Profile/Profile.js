@@ -1,7 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Profile = ({ setPage }) => {
+const Profile = ({ name }) => {
     return (
-        <h1>Profile</h1>
+        <h1>{ name }</h1>
     )
 }
+
+Profile.defaultProps = {
+    name: "Test text"
+}
+
+Profile.propTypes = {
+    name: PropTypes.string
+}
+
+export default Profile;
