@@ -40,6 +40,10 @@ const Map = ({ name }) => {
     )
 }
 
+Map.defaultProps = {
+    name: "Test text"
+}
+
 Map.propTypes = {
     name: PropTypes.string
 }

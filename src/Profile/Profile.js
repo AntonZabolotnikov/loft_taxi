@@ -7,6 +7,10 @@ const Profile = ({ name }) => {
     )
 }
 
+Profile.defaultProps = {
+    name: "Test text"
+}
+
 Profile.propTypes = {
     name: PropTypes.string
 }

@@ -7,6 +7,10 @@ const Signup = ({ name }) => {
     )
 }
 
+Signup.defaultProps = {
+    name: "Test text"
+}
+
 Signup.propTypes = {
     name: PropTypes.string
 }
